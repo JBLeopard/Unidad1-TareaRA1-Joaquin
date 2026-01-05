@@ -1,1 +1,36 @@
+# Configuración del Workflow
+name: Deploy MkDocs - JBLeopard
 
+on:
+  push:
+    branches:
+      - main   # Se ejecuta cada vez que hago push a la rama principal
+# Permisos
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+# Job principal
+jobs:
+  deploy:
+    runs-on: ubuntu-latest   # Máquina virtual donde se ejecuta todo
+
+    steps:
+    # Obtener el repositorio
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4
+    # Configurar Python
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    # Instalar dependencias
+    - name: Instalar MkDocs y Material
+      run: |
+        pip install mkdocs
+        pip install mkdocs-material
+    # Construir y publicar documentación
+    - name: Desplegar documentación en gh-pages
+      run: mkdocs gh-deploy --force
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
