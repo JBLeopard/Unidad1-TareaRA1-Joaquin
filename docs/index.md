@@ -24,10 +24,9 @@ El objetivo principal es integrar diferentes herramientas de DevSecOps: Git, Git
 
 | Archivo | Descripción |
 |---------|-------------|
-| `git.md` | Creación del repositorio y operaciones básicas con Git. |
-| `gitActions.md` | Configuración del workflow de GitHub Actions. |
-| `gitPages.md` | Publicación del sitio en GitHub Pages. |
-| `docker.md` | Despliegue de la documentación en un contenedor NGINX. |
+| `documentacion.md` | Creación del repositorio y operaciones básicas con Git. |
+| `tests.md` | Configuración del workflow de GitHub Actions. |
+| `sandbox.md` | Publicación del sitio en GitHub Pages. |
 | `conclusiones.md` | Reflexión final del trabajo realizado. |
 
 ---
