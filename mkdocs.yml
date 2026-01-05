@@ -1,0 +1,30 @@
+# Configuración del sitio
+site_name: "Unidad1-TareaRA1-Joaquin"
+site_description: "Documentación de la actividad de la Unidad 1"
+site_author: "JBLeopard"
+# Tema
+theme:
+  name: material
+  language: es
+  palette:
+    primary: indigo
+    accent: cyan
+# Menú navegación
+nav:
+  - Inicio: index.md
+  - Git y Repositorio: git.md
+  - GitHub Actions: gitActions.md
+  - GitHub Pages: gitPages.md
+  - Docker y NGINX: docker.md
+  - Conclusiones: conclusiones.md
+# Carpeta donde están los archivos Markdown
+docs_dir: docs
+# Extensions Markdown
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - codehilite
+  - footnotes
+  - def_list
