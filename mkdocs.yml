@@ -12,11 +12,10 @@ theme:
 # Menú navegación
 nav:
   - Inicio: index.md
-  - Git y Repositorio: git.md
-  - GitHub Actions: gitActions.md
-  - GitHub Pages: gitPages.md
-  - Docker y NGINX: docker.md
-  - Conclusiones: conclusiones.md
+  - Documentación y prueba del programa: documentacion.md
+  - Realización de los test unitarios de la aplicación: tests.md
+  - Ejecución de la aplicación en un entorno controlado: sandbox.md
+  - Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes: conclusiones.md
 # Carpeta donde están los archivos Markdown
 docs_dir: docs
 # Extensions Markdown
