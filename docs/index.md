@@ -9,7 +9,7 @@
 3. Ejecución de la aplicación en un entorno controlado:  
    **[Ejecución de la aplicación en un entorno controlado](sandbox.md)**  
 
-4. Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes:
+4. Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes:  
    **[Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes](conclusiones.md)**  
 
 ---
