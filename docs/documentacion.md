@@ -28,14 +28,12 @@ Estos comentarios permiten comprender el funcionamiento interno del programa sin
 
 ---
 
-## 1.2 Documentación mediante Jupyter Notebook
+## 1.2 Documentación mediante Jupyter Notebook (estado inicial lavadero.py)
 
 Como apoyo adicional, se ha creado un cuaderno Jupyter Notebook donde se explica:
 
-- El enunciado del ejercicio
-- El diseño general de la aplicación
-- Ejemplos de uso del lavadero
-- Fragmentos de código explicados paso a paso
+- Pruebas unitarias de la aplicación
+- Simulación
 
 Este formato facilita una comprensión más visual y didáctica del programa.
 
