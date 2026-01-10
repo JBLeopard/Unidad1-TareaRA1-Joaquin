@@ -17,10 +17,10 @@ Las pruebas se han realizado en el siguiente entorno:
 - Editor / IDE: **Visual Studio Code**
 - Terminal: Bash
 
-📄 Archivo de pruebas unitarias:  
+Archivo de pruebas unitarias:  
 [`tests/test_lavadero_unittest.py`](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/tests/test_lavadero_unittest.py)
 
-📄 Archivo de la aplicación corregido:  
+Archivo de la aplicación corregido:  
 [`lavadero.py`](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/src/lavadero.py)
 
 ---
@@ -212,8 +212,11 @@ Resumen de resultados iniciales
 
 Esto indicaba claramente que la aplicación no cumplía aún los requisitos funcionales definidos por los tests.
 
-3.4 Análisis detallado de los fallos (FAIL)
-3.4.1 Error en el cálculo del precio del secado a mano
+---
+
+## 3.5 Análisis detallado de los fallos (FAIL)
+
+### 3.4.1 Error en el cálculo del precio del secado a mano
 
 Test afectado:
 test5_ingresos_secado_mano
@@ -221,10 +224,6 @@ test5_ingresos_secado_mano
 Mensaje de error:
 
 AssertionError: 6.2 != 6.0
-
-
-📄 Localización del test:
-test_lavadero_unittest.py
 
 Descripción:
 El test esperaba que un lavado con solo secado a mano tuviera un coste total de 6,00 €, pero el código original devolvía 6,20 €.
@@ -237,7 +236,7 @@ Corrección aplicada:
 if self.__secado_a_mano:
     coste_lavado += 1.00
 
-3.4.2 Error en el cálculo de prelavado + secado a mano
+### 3.4.2 Error en el cálculo de prelavado + secado a mano
 
 Test afectado:
 test7_ingresos_prelavado_y_secado
@@ -253,15 +252,19 @@ El precio calculado no coincidía con el valor esperado por el test.
 Causa del error:
 Los incrementos de precio definidos en _cobrar() no estaban alineados con los valores exigidos por los tests unitarios.
 
-Solución aplicada:
-Se ajustaron los precios definitivos a:
+Solución aplicada:  
+Se ajustaron los precios definitivos a:  
 
-Opción	Incremento
-Prelavado a mano	+1,50 €
-Secado a mano	+1,00 €
-Encerado	+1,20 €
-3.5 Análisis de los errores de ejecución (ERROR)
-3.5.1 Método inexistente ejecutar_y_obtener_fases
+Opción	Incremento  
+Prelavado a mano	+1,50 €  
+Secado a mano	+1,00 €  
+Encerado	+1,20 €  
+
+---
+
+## 3.5 Análisis de los errores de ejecución (ERROR)
+
+### 3.5.1 Método inexistente ejecutar_y_obtener_fases
 
 Tests afectados:
 test9 a test14
@@ -284,10 +287,7 @@ Se movió el método dentro de la clase Lavadero
 
 Se corrigió la llamada a hacerLavado()
 
-📄 Código corregido:
-lavadero.py
-
-3.5.2 Error lógico en el flujo de fases (avanzarFase)
+## 3.5.2 Error lógico en el flujo de fases (avanzarFase)
 
 Este error no generaba errores de sintaxis, pero provocaba que los tests de flujo fallaran.
 
@@ -317,14 +317,51 @@ Si no → finalizar lavado
 
 Esto permitió que el flujo coincidiera exactamente con los valores esperados por los tests.
 
-3.6 Resultados finales tras las correcciones
+## 3.6 Resultados finales tras las correcciones
 
 Tras aplicar todas las correcciones, se volvió a ejecutar la batería completa de tests.
 
-📸 Captura de tests superados correctamente
+**Captura de tests superados correctamente**
+
+![Test correcto](./imagenes/testsok.png)
 
 
-📄 Salida completa de la ejecución corregida:
-salidatestcorregida.txt
+Salida completa de la ejecución corregida:
+```bash
+┌──(.venv)(PPSJoaquin㉿kali)-[~/Descargas/programa/src]
+└─$ PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
+test10_flujo_prelavado (test_lavadero_unittest.TestLavadero.test10_flujo_prelavado)
+Test 10: Flujo con prelavado. ... ok
+test11_flujo_secado_mano (test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano)
+Test 11: Flujo con secado a mano. ... ok
+test12_flujo_secado_y_encerado (test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado)
+Test 12: Flujo con secado a mano y encerado. ... ok
+test13_flujo_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado)
+Test 13: Flujo con prelavado y secado a mano. ... ok
+test14_flujo_completo (test_lavadero_unittest.TestLavadero.test14_flujo_completo)
+Test 14: Flujo completo. ... ok
+test1_estado_inicial_inactivo (test_lavadero_unittest.TestLavadero.test1_estado_inicial_inactivo)
+Test 1: Estado inicial del lavadero. ... ok
+test2_excepcion_encerado_sin_secado (test_lavadero_unittest.TestLavadero.test2_excepcion_encerado_sin_secado)
+Test 2: Encerado sin secado a mano lanza ValueError. ... ok
+test3_excepcion_lavadero_ocupado (test_lavadero_unittest.TestLavadero.test3_excepcion_lavadero_ocupado)
+Test 3: No se puede iniciar un lavado si ya está ocupado. ... ok
+test4_ingresos_prelavado (test_lavadero_unittest.TestLavadero.test4_ingresos_prelavado)
+Test 4: Prelavado a mano = 6.50 € ... ok
+test5_ingresos_secado_mano (test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano)
+Test 5: Secado a mano = 6.00 € ... ok
+test6_ingresos_secado_y_encerado (test_lavadero_unittest.TestLavadero.test6_ingresos_secado_y_encerado)
+Test 6: Secado a mano + encerado = 7.20 € ... ok
+test7_ingresos_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado)
+Test 7: Prelavado + secado a mano = 7.50 € ... ok
+test8_ingresos_completo (test_lavadero_unittest.TestLavadero.test8_ingresos_completo)
+Test 8: Prelavado + secado a mano + encerado = 8.70 € ... ok
+test9_flujo_sin_extras (test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras)
+Test 9: Flujo sin extras. ... ok
 
-Resultado final:
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+OK
+ (COBRADO: 6.50 €)  (COBRADO: 6.00 €)  (COBRADO: 7.20 €)  (COBRADO: 7.50 €)  (COBRADO: 8.70 €)  (COBRADO: 6.50 €)  (COBRADO: 6.00 €)  (COBRADO: 7.20 €)  (COBRADO: 7.50 €)  (COBRADO: 8.70 €)  (COBRADO: 5.00 €)
+```
