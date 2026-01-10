@@ -18,7 +18,7 @@ Se han añadido comentarios detallados en el archivo `lavadero.py` para explicar
 
 Estos comentarios permiten comprender el funcionamiento interno del programa sin necesidad de ejecutar el código.
 
-📸 **Código comentado en Visual Studio Code**  
+**Código comentado en Visual Studio Code**  
 ![Comentarios en lavadero.py](./imagenes/comentarios.png)
 
 ---
@@ -34,9 +34,9 @@ Como apoyo adicional, se ha creado un cuaderno Jupyter Notebook donde se explica
 
 Este formato facilita una comprensión más visual y didáctica del programa.
 
-📓 **Notebook del proyecto:**  
-👉 [notebook_lavadero.ipynb](./notebook_lavadero.ipynb)
+**Notebook del proyecto:**  
+[notebook_lavadero.ipynb](./notebook_lavadero.ipynb)
 
-📸 **Notebook visualizado en el navegador**  
+**Notebook visualizado en el navegador**  
 ![Notebook Lavadero](./imagenes/notebook.png)
 ---
