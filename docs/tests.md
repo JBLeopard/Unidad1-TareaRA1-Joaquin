@@ -1,8 +1,7 @@
 # 3. Pruebas unitarias y corrección del código de la aplicación
 
-En este apartado se documenta de forma detallada el proceso completo de **ejecución de pruebas unitarias**, **detección de errores**, **análisis de fallos** y **corrección del código** de la aplicación del lavadero.
-
-Este apartado es clave dentro de la asignatura *Puesta en Producción Segura*, ya que demuestra el uso de pruebas automáticas como mecanismo de control de calidad y detección temprana de errores antes del despliegue de una aplicación.
+En este apartado se documenta de forma detallada el proceso completo de **ejecución de pruebas unitarias**, **detección de errores**, **análisis de fallos** y **corrección del código** de la aplicación del lavadero.  
+Se hacen uso de pruebas automáticas como mecanismo de control de calidad y detección temprana de errores antes del despliegue de una aplicación.
 
 ---
 
