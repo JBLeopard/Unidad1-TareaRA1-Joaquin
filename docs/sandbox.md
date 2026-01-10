@@ -21,6 +21,7 @@ La aplicación `main_app.py` se lanzó desde Firetools, ejecutándose dentro de 
 - Acceso a otros procesos
 
 **Aplicación ejecutándose en Firetools**  
+
 ![Firetools Sandbox](./imagenes/sandbox.png)
 
 ---
