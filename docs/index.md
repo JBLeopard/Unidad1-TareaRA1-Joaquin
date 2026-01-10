@@ -1,15 +1,18 @@
 # Índice
 
-1. Documentación y prueba del programa:  
-   **[Documentación y prueba del programa](documentacion.md)**  
+1. Elementos de Python:  
+   **[Documentación del programa](documentacion.md)**
 
-2. Realización de los test unitarios de la aplicación:  
+2. Ejecución y Depuración:  
+   **[Ejecución del programa](ejecucion.md)**
+
+3. Pruebas:  
    **[Realización de los test unitarios de la aplicación](tests.md)**  
 
-3. Ejecución de la aplicación en un entorno controlado:  
+4. Ejecución en Sandbox:  
    **[Ejecución de la aplicación en un entorno controlado](sandbox.md)**  
 
-4. Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes:  
+5. Reflexión:  
    **[Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes](conclusiones.md)**  
 
 ---
