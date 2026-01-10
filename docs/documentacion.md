@@ -19,7 +19,12 @@ Se han añadido comentarios detallados en el archivo `lavadero.py` para explicar
 Estos comentarios permiten comprender el funcionamiento interno del programa sin necesidad de ejecutar el código.
 
 **Código comentado en Visual Studio Code**  
+
 ![Comentarios en lavadero.py](./imagenes/comentarios.png)
+
+**Archivo lavadero.py:**  
+
+[notebook_lavadero.ipynb](./src/lavadero.py)
 
 ---
 
