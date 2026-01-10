@@ -1,4 +1,4 @@
-# 1. Creación del repositorio
+# 1. Añade los comentarios al código de la aplicación indicando para que sirven las diferentes sentencias, funciones, etc.
 
 Este documento describe el proceso realizado para la creación y configuración inicial del repositorio **PPS-Unidad0-Tarea-Joaquin**.
 
@@ -105,3 +105,4 @@ PPS-Unidad0-Tarea-Joaquin/
 | Subir cambios      | `git push origin main`    |
 
 ---
+# 2. Ejecuta el programa mediante las opciones de Ejecución y Depuración del IDE.
