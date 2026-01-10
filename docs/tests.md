@@ -18,7 +18,7 @@ Las pruebas se han realizado en el siguiente entorno:
 - Terminal: Bash
 
 Archivo de pruebas unitarias:  
-[`tests/test_lavadero_unittest.py`](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/tests/test_lavadero_unittest.py)
+[`test_lavadero_unittest.py`](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/tests/test_lavadero_unittest.py)
 
 Archivo de la aplicación corregido:  
 [`lavadero.py`](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/src/lavadero.py)
