@@ -84,9 +84,125 @@ En la primera ejecución de las pruebas sobre el código original de lavadero.py
 ![Errores test](./imagenes/testsko.png)
 ![Errores test](./imagenes/testsko2.png)
 
-Salida completa de la ejecución con errores:
-salidatesterror.txt
+Salida completa de la ejecución con errores:  
+```bash
+┌──(.venv)(PPSJoaquin㉿kali)-[~/Descargas/programa/src]
+└─$ PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
+test10_flujo_prelavado (test_lavadero_unittest.TestLavadero.test10_flujo_prelavado)
+Test 10: Flujo con prelavado. ... ERROR
+test11_flujo_secado_mano (test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano)
+Test 11: Flujo con secado a mano. ... ERROR
+test12_flujo_secado_y_encerado (test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado)
+Test 12: Flujo con secado a mano y encerado. ... ERROR
+test13_flujo_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado)
+Test 13: Flujo con prelavado y secado a mano. ... ERROR
+test14_flujo_completo (test_lavadero_unittest.TestLavadero.test14_flujo_completo)
+Test 14: Flujo completo. ... ERROR
+test1_estado_inicial_inactivo (test_lavadero_unittest.TestLavadero.test1_estado_inicial_inactivo)
+Test 1: Estado inicial del lavadero. ... ok
+test2_excepcion_encerado_sin_secado (test_lavadero_unittest.TestLavadero.test2_excepcion_encerado_sin_secado)
+Test 2: Encerado sin secado a mano lanza ValueError. ... ok
+test3_excepcion_lavadero_ocupado (test_lavadero_unittest.TestLavadero.test3_excepcion_lavadero_ocupado)
+Test 3: No se puede iniciar un lavado si ya está ocupado. ... ok
+test4_ingresos_prelavado (test_lavadero_unittest.TestLavadero.test4_ingresos_prelavado)
+Test 4: Prelavado a mano = 6.50 € ... ok
+test5_ingresos_secado_mano (test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano)
+Test 5: Secado a mano = 6.00 € ... FAIL
+test6_ingresos_secado_y_encerado (test_lavadero_unittest.TestLavadero.test6_ingresos_secado_y_encerado)
+Test 6: Secado a mano + encerado = 7.20 € ... ok
+test7_ingresos_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado)
+Test 7: Prelavado + secado a mano = 7.50 € ... FAIL
+test8_ingresos_completo (test_lavadero_unittest.TestLavadero.test8_ingresos_completo)
+Test 8: Prelavado + secado a mano + encerado = 8.70 € ... ok
+test9_flujo_sin_extras (test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras)
+Test 9: Flujo sin extras. ... ERROR
 
+======================================================================
+ERROR: test10_flujo_prelavado (test_lavadero_unittest.TestLavadero.test10_flujo_prelavado)
+Test 10: Flujo con prelavado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 85, in test10_flujo_prelavado
+    fases = self.lavadero.ejecutar_y_obtener_fases(True, False, False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+ERROR: test11_flujo_secado_mano (test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano)
+Test 11: Flujo con secado a mano.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 91, in test11_flujo_secado_mano
+    fases = self.lavadero.ejecutar_y_obtener_fases(False, True, False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+ERROR: test12_flujo_secado_y_encerado (test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado)
+Test 12: Flujo con secado a mano y encerado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 97, in test12_flujo_secado_y_encerado
+    fases = self.lavadero.ejecutar_y_obtener_fases(False, True, True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+ERROR: test13_flujo_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado)
+Test 13: Flujo con prelavado y secado a mano.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 103, in test13_flujo_prelavado_y_secado
+    fases = self.lavadero.ejecutar_y_obtener_fases(True, True, False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+ERROR: test14_flujo_completo (test_lavadero_unittest.TestLavadero.test14_flujo_completo)
+Test 14: Flujo completo.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 109, in test14_flujo_completo
+    fases = self.lavadero.ejecutar_y_obtener_fases(True, True, True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+ERROR: test9_flujo_sin_extras (test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras)
+Test 9: Flujo sin extras.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 79, in test9_flujo_sin_extras
+    fases = self.lavadero.ejecutar_y_obtener_fases(False, False, False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+
+======================================================================
+FAIL: test5_ingresos_secado_mano (test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano)
+Test 5: Secado a mano = 6.00 €
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 53, in test5_ingresos_secado_mano
+    self.assertEqual(self.lavadero.ingresos, 6.00)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 6.2 != 6.0
+
+======================================================================
+FAIL: test7_ingresos_prelavado_y_secado (test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado)
+Test 7: Prelavado + secado a mano = 7.50 €
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py", line 65, in test7_ingresos_prelavado_y_secado
+    self.assertEqual(self.lavadero.ingresos, 7.50)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 7.7 != 7.5
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.008s
+
+FAILED (failures=2, errors=6)
+ (COBRADO: 6.50 €)  (COBRADO: 6.20 €)  (COBRADO: 7.20 €)  (COBRADO: 7.70 €)  (COBRADO: 8.70 €)
+```
 Resumen de resultados iniciales
 
 14 tests ejecutados
