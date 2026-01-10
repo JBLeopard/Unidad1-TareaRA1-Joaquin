@@ -203,15 +203,12 @@ Ran 14 tests in 0.008s
 FAILED (failures=2, errors=6)
  (COBRADO: 6.50 €)  (COBRADO: 6.20 €)  (COBRADO: 7.20 €)  (COBRADO: 7.70 €)  (COBRADO: 8.70 €)
 ```
-Resumen de resultados iniciales
+Resumen de resultados iniciales  
 
-14 tests ejecutados
-
-2 fallos (FAIL)
-
-6 errores (ERROR)
-
-6 tests correctos (OK)
+- 14 tests ejecutados  
+- 2 fallos (FAIL)  
+- 6 errores (ERROR)  
+- 6 tests correctos (OK)
 
 Esto indicaba claramente que la aplicación no cumplía aún los requisitos funcionales definidos por los tests.
 
