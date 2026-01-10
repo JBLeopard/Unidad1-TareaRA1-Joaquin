@@ -106,4 +106,49 @@ PPS-Unidad0-Tarea-Joaquin/
 
 ---
 # 2. Ejecuta el programa mediante las opciones de Ejecución y Depuración del IDE.
+🔴 ERROR REAL 1 (IMPORTANTE)
+Falta un argumento al llamar a la función
+📍 Dónde ocurre
 
+Archivo: main_app.py
+Última llamada a ejecutarSimulacion
+
+ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=False)
+
+🔴 Qué muestra Visual Studio Code al ejecutar / depurar
+
+En la consola aparece algo como:
+
+TypeError: ejecutarSimulacion() missing 1 required positional argument: 'encerado'
+
+
+VS Code:
+
+Detiene la ejecución
+
+Marca la línea en rojo
+
+Indica el archivo y la línea exacta
+
+🧠 Causa del error
+
+La función está definida así:
+
+def ejecutarSimulacion(lavadero, prelavado, secado_mano, encerado):
+
+
+Pero se está llamando solo con 3 argumentos, cuando necesita 4.
+
+✅ Solución aplicada
+
+Añadir el argumento que falta:
+
+ejecutarSimulacion(
+    lavadero_global,
+    prelavado=True,
+    secado_mano=False,
+    encerado=False
+)
+
+
+👉 Este error SÍ es obligatorio documentarlo en el Apartado 2.
