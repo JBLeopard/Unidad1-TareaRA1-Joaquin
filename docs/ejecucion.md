@@ -9,6 +9,7 @@ En este apartado se describe el proceso de ejecución y depuración de la aplica
 Durante la primera ejecución, el programa no funcionó correctamente debido a varios errores de implementación.
 
 **Error mostrado en Visual Studio Code**  
+
 ![Error en ejecución](./imagenes/errormainapp.png)
 
 ---
@@ -39,6 +40,7 @@ He modificado la función para aceptar explícitamente:
 - Las opciones de prelavado, secado y encerado
 
 **Error corregido tras la modificación**  
+
 ![Error solucionado](./imagenes/errormainappsol.png)
 
 ---
