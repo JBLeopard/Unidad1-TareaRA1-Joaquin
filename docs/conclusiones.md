@@ -1,38 +1,14 @@
 # 5. Reflexión sobre la infraestructura de seguridad de los lenguajes
 
-Durante la realización de esta práctica se han aplicado conceptos relacionados con la seguridad del software, el testing y la puesta en producción.
+Durante el desarrollo de esta tarea se han analizado diferentes aspectos relacionados con la seguridad en los lenguajes de programación y su ejecución.
 
----
+Python es un lenguaje que prioriza la facilidad de uso y la legibilidad, pero no incorpora de forma nativa mecanismos estrictos de aislamiento o control de recursos. Por este motivo, herramientas externas como Firejail o contenedores Docker resultan fundamentales para ejecutar aplicaciones Python de forma segura en entornos productivos.
 
-## Seguridad en Python
+Otros lenguajes, como Java o C#, incorporan máquinas virtuales con mecanismos de seguridad más avanzados, como control de memoria, gestión de permisos o sandboxing interno. Sin embargo, incluso en estos casos, el uso de entornos controlados sigue siendo una buena práctica.
 
-Python ofrece múltiples ventajas en términos de seguridad:
-- Gestión automática de memoria
-- Manejo de excepciones
-- Amplio ecosistema de testing
-- Facilidad para integrar herramientas externas
+Esta tarea pone de manifiesto la importancia de combinar:
+- Buenas prácticas de programación
+- Pruebas automatizadas
+- Ejecución en entornos aislados
 
----
-
-## Comparación con otros lenguajes
-
-Lenguajes como Java o C# ofrecen mayor control a nivel de tipado, mientras que Python destaca por su rapidez de desarrollo y facilidad de mantenimiento.
-
----
-
-## Importancia de testing y sandboxing
-
-Las pruebas unitarias permiten detectar errores antes de llegar a producción, mientras que el sandboxing protege el sistema frente a fallos o vulnerabilidades.
-
----
-
-## Conclusión final
-
-La combinación de:
-- Buen diseño
-- Documentación
-- Pruebas unitarias
-- Depuración
-- Ejecución en sandbox
-
-da lugar a una aplicación segura, robusta y alineada con los principios de **Puesta en Producción Segura**.
+Todo ello contribuye a una **puesta en producción más segura**, alineada con los principios de DevSecOps.
