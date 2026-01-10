@@ -216,55 +216,10 @@ Esto indicaba claramente que la aplicación no cumplía aún los requisitos func
 
 ## 3.5 Análisis detallado de los fallos (FAIL)
 
-### 3.4.1 Error en el cálculo del precio del secado a mano
-
-Test afectado:
-test5_ingresos_secado_mano
-
-Mensaje de error:
-
-AssertionError: 6.2 != 6.0
-
-Descripción:
-El test esperaba que un lavado con solo secado a mano tuviera un coste total de 6,00 €, pero el código original devolvía 6,20 €.
-
-Causa del error:
-En el método _cobrar() del archivo lavadero.py, el incremento aplicado al secado a mano era incorrecto.
-
-Corrección aplicada:
-
-if self.__secado_a_mano:
-    coste_lavado += 1.00
-
-### 3.4.2 Error en el cálculo de prelavado + secado a mano
-
-Test afectado:
-test7_ingresos_prelavado_y_secado
-
-Mensaje de error:
-
-AssertionError: 7.7 != 7.5
-
-
-Descripción:
-El precio calculado no coincidía con el valor esperado por el test.
-
-Causa del error:
-Los incrementos de precio definidos en _cobrar() no estaban alineados con los valores exigidos por los tests unitarios.
-
-Solución aplicada:  
-Se ajustaron los precios definitivos a:  
-
-Opción	Incremento  
-Prelavado a mano	+1,50 €  
-Secado a mano	+1,00 €  
-Encerado	+1,20 €  
 
 ---
 
-## 3.5 Análisis de los errores de ejecución (ERROR)
-
-## 3.5 Análisis detallado de los fallos (FAIL)
+## 3.5 Análisis de los errores de ejecución (FAIL)
 
 ### 3.5.1 Error en el cálculo del precio del secado a mano
 
@@ -278,6 +233,9 @@ Encerado	+1,20 €
 ```python
 if self.__secado_a_mano:
     coste_lavado += 1.00
+```
+
+---
 
 ### 3.5.2 Error en el cálculo de prelavado + secado a mano
 
@@ -328,11 +286,16 @@ Desde `FASE_RODILLOS`:
 ```text
 Si secado_a_mano → FASE_SECADO_MANO
 Si no → FASE_SECADO_AUTOMATICO
+```
+Desde FASE_SECADO_MANO:
+```text
+Si encerado → FASE_ENCERADO
+Si no → finalizar lavado
+```
 
+## 3.7 Resultados finales tras las correcciones
 
-## 3.6 Resultados finales tras las correcciones
-
-Tras aplicar todas las correcciones, se volvió a ejecutar la batería completa de tests.
+Tras aplicar todas las correcciones,  los tests se ejecutan de manera exitosa.
 
 **Captura de tests superados correctamente**
 
