@@ -277,7 +277,7 @@ Desde `FASE_RODILLOS`:
 Si secado_a_mano → FASE_SECADO_MANO
 Si no → FASE_SECADO_AUTOMATICO
 ```
-Desde FASE_SECADO_MANO:
+Desde `FASE_SECADO_MANO`:
 ```text
 Si encerado → FASE_ENCERADO
 Si no → finalizar lavado
