@@ -264,58 +264,71 @@ Encerado	+1,20 €
 
 ## 3.5 Análisis de los errores de ejecución (ERROR)
 
-### 3.5.1 Método inexistente ejecutar_y_obtener_fases
+## 3.5 Análisis detallado de los fallos (FAIL)
 
-Tests afectados:
-test9 a test14
+### 3.5.1 Error en el cálculo del precio del secado a mano
 
-Mensaje de error:
+- **Test afectado:** `test5_ingresos_secado_mano`  
+- **Mensaje de error:** `AssertionError: 6.2 != 6.0`  
+- **Descripción:**  
+  El test esperaba que un lavado con solo secado a mano tuviera un coste total de 6,00 €, pero el código original devolvía 6,20 €.  
+- **Causa del error:**  
+  En el método `_cobrar()` del archivo `lavadero.py`, el incremento aplicado al secado a mano era incorrecto.  
+- **Corrección aplicada:**
+```python
+if self.__secado_a_mano:
+    coste_lavado += 1.00
 
-AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'
+### 3.5.2 Error en el cálculo de prelavado + secado a mano
 
+- **Test afectado:** `test7_ingresos_prelavado_y_secado`  
+- **Mensaje de error:** `AssertionError: 7.7 != 7.5`  
+- **Descripción:**  
+  El precio calculado no coincidía con el valor esperado por el test.  
+- **Causa del error:**  
+  Los incrementos de precio definidos en `_cobrar()` no estaban alineados con los valores exigidos por los tests unitarios.  
+- **Solución aplicada:**  
+  Se ajustaron los precios definitivos a:
 
-Causa:
-El método ejecutar_y_obtener_fases:
+| Opción            | Incremento |
+|------------------|------------|
+| Prelavado a mano  | +1,50 €    |
+| Secado a mano     | +1,00 €    |
+| Encerado          | +1,20 €    |
 
-No estaba definido dentro de la clase Lavadero
+---
 
-Llamaba a un método inexistente _hacer_lavado
+## 3.6 Análisis de los errores de ejecución (ERROR)
 
-Solución aplicada:
+### 3.6.1 Método inexistente `ejecutar_y_obtener_fases`
 
-Se movió el método dentro de la clase Lavadero
+- **Tests afectados:** test9 a test14  
+- **Mensaje de error:** `AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'`  
+- **Causa:**  
+  El método `ejecutar_y_obtener_fases`:
+  - No estaba definido dentro de la clase `Lavadero`.  
+  - Llamaba a un método inexistente `_hacer_lavado`.  
+- **Solución aplicada:**  
+  - Se movió el método dentro de la clase `Lavadero`.  
+  - Se corrigió la llamada a `hacerLavado()`.
 
-Se corrigió la llamada a hacerLavado()
+---
 
-## 3.5.2 Error lógico en el flujo de fases (avanzarFase)
+### 3.6.2 Error lógico en el flujo de fases (`avanzarFase`)
 
-Este error no generaba errores de sintaxis, pero provocaba que los tests de flujo fallaran.
+- **Problemas detectados:**  
+  - El flujo desde la fase de rodillos era incorrecto.  
+  - El secado a mano no se ejecutaba correctamente.  
+  - El encerado no se alcanzaba aunque estuviera seleccionado.  
+  - El lavado terminaba antes de tiempo.  
 
-Problemas detectados:
+- **Correcciones aplicadas:**  
 
-El flujo desde la fase de rodillos era incorrecto
-
-El secado a mano no se ejecutaba correctamente
-
-El encerado no se alcanzaba aunque estuviera seleccionado
-
-El lavado terminaba antes de tiempo
-
-Correcciones aplicadas:
-
-Desde FASE_RODILLOS:
-
+Desde `FASE_RODILLOS`:
+```text
 Si secado_a_mano → FASE_SECADO_MANO
-
 Si no → FASE_SECADO_AUTOMATICO
 
-Desde FASE_SECADO_MANO:
-
-Si encerado → FASE_ENCERADO
-
-Si no → finalizar lavado
-
-Esto permitió que el flujo coincidiera exactamente con los valores esperados por los tests.
 
 ## 3.6 Resultados finales tras las correcciones
 
