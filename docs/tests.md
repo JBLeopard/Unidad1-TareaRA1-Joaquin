@@ -31,7 +31,7 @@ Las pruebas se ejecutaron desde terminal utilizando el descubrimiento automátic
 
 ```bash
 PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v  
-
+```
 ## 3.2 Tipos de pruebas realizadas
 
 ### ✅ Test 1 – Estado inicial
