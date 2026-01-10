@@ -34,9 +34,10 @@ Como apoyo adicional, se ha creado un cuaderno Jupyter Notebook donde se explica
 
 Este formato facilita una comprensión más visual y didáctica del programa.
 
+**Notebook visualizado en el navegador**  
+![Notebook Lavadero](./imagenes/notebook.png)
+
 **Notebook del proyecto:**  
 [notebook_lavadero.ipynb](./notebook_lavadero.ipynb)
 
-**Notebook visualizado en el navegador**  
-![Notebook Lavadero](./imagenes/notebook.png)
 ---
