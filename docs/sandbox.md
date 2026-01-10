@@ -15,7 +15,7 @@ Estas herramientas permiten limitar el acceso del programa al sistema operativo.
 
 ## Ejecución de la aplicación
 
-La aplicación `main_app.py` se lanzó desde Firetools, ejecutándose dentro de un sandbox que restringe:
+He lanzado la aplicación `main_app.py` desde Firetools, para ejecutarla dentro de un sandbox que restringe:
 - Acceso al sistema de archivos
 - Acceso a la red
 - Acceso a otros procesos
