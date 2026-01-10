@@ -1,20 +1,36 @@
-# 3. Pruebas unitarias y corrección del código
+# 3. Pruebas unitarias y corrección del código de la aplicación
 
-Este apartado es clave en la práctica, ya que permite detectar errores que no son visibles durante la ejecución normal del programa.
+En este apartado se documenta de forma detallada el proceso completo de **ejecución de pruebas unitarias**, **detección de errores**, **análisis de fallos** y **corrección del código** de la aplicación del lavadero.
 
-Se han desarrollado pruebas unitarias con **Unittest** para verificar que la aplicación cumple exactamente con todos los requisitos del enunciado.
-
----
-
-## 3.1 Framework de pruebas
-
-Se ha utilizado **Unittest**, incluido en la biblioteca estándar de Python.
-
-📄 Archivo de pruebas:  
-👉 [tests/test_lavadero_unittest.py](../tests/test_lavadero_unittest.py)
+Este apartado es clave dentro de la asignatura *Puesta en Producción Segura*, ya que demuestra el uso de pruebas automáticas como mecanismo de control de calidad y detección temprana de errores antes del despliegue de una aplicación.
 
 ---
 
+## 3.1 Entorno de pruebas
+
+Las pruebas se han realizado en el siguiente entorno:
+
+- Sistema operativo: **Kali Linux**
+- Lenguaje: **Python 3**
+- Framework de testing: **unittest**
+- Entorno virtual: `.venv`
+- Editor / IDE: **Visual Studio Code**
+- Terminal: Bash
+
+📄 Archivo de pruebas unitarias:  
+[`tests/test_lavadero_unittest.py`](./tests/test_lavadero_unittest.py)
+
+📄 Archivo de la aplicación corregido:  
+[`lavadero.py`](./lavadero.py)
+
+---
+
+## 3.2 Ejecución de las pruebas unitarias
+
+Las pruebas se ejecutaron desde terminal utilizando el descubrimiento automático de tests:
+
+```bash
+PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
 ## 3.2 Tipos de pruebas realizadas
 
 ### ✅ Test 1 – Estado inicial
