@@ -24,7 +24,7 @@ Estos comentarios permiten comprender el funcionamiento interno del programa sin
 
 **Archivo lavadero.py:**  
 
-[notebook_lavadero.ipynb](./src/lavadero.py)
+[lavadero.py](../src/lavadero.py)
 
 ---
 
