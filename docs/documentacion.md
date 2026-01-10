@@ -24,7 +24,7 @@ Estos comentarios permiten comprender el funcionamiento interno del programa sin
 
 **Archivo lavadero.py:**  
 
-[lavadero.py]([https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/src/lavadero.py])
+[lavadero.py](https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/src/lavadero.py)
 
 ---
 
