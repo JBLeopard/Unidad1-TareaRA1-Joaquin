@@ -22,25 +22,31 @@ Este repositorio contiene toda la documentación y archivos correspondientes a l
 Unidad1-TareaRA1-Joaquin/
 ├── docs
 │   ├── conclusiones.md
-│   ├── docker.md
-│   ├── gitActions.md
-│   ├── git.md
-│   ├── gitPages.md
-│   ├── imagenes
-│   │   ├── contenedor.jpg
-│   │   ├── gitpages.jpg
-│   │   ├── logo.png
-│   │   ├── repo.jpg
-│   │   ├── seg.jpg
-│   │   ├── ssh.jpg
-│   │   ├── web.jpg
-│   │   ├── wf.jpg
-│   │   └── wflogs.jpg
+│   ├── documentacion.md
+│   ├── ejecucion.md
 │   ├── index.md
-│   └── inspect_salida.json
+│   ├── notebook_lavadero.ipynb
+│   ├── sandbox.md
+│   ├── tests.md
+│   ├── imagenes
+│   │   ├── comentarios.png
+│   │   ├── errormainapp.png
+│   │   ├── errormainappsol.png
+│   │   ├── logo.png
+│   │   ├── notebook.png
+│   │   ├── sandbox.png
+│   │   ├── testsko.png
+│   │   ├── testsko2.png
+│   │   └── testsok.png
+├── src
+│   ├── lavadero.py
+│   └── main_app.py
+├── tests
+│   └── test_lavadero_unittest.py
 ├── .github
 │   └── workflows
 │       └── CreacionDocumentacion.yml
 ├── mkdocs.yml
+├── requeriments.txt
 └── README.md
 ```
