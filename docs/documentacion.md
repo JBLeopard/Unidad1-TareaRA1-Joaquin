@@ -1,164 +1,42 @@
-# 1. Añade los comentarios al código de la aplicación indicando para que sirven las diferentes sentencias, funciones, etc.
+# 1. Documentación del programa
 
-Este documento describe el proceso realizado para la creación y configuración inicial del repositorio **PPS-Unidad0-Tarea-Joaquin**.
+En este apartado se documenta el código fuente de la aplicación **Lavadero**, cuyo objetivo es simular el funcionamiento de un lavadero de coches automático con distintas opciones de lavado.
 
----
-
-## Objetivo
-Crear un repositorio público en GitHub con la estructura mínima necesaria para alojar la documentación de la actividad y preparar la automatización con GitHub Actions y la publicación en GitHub Pages.
+La documentación se ha realizado siguiendo buenas prácticas de programación, con comentarios claros y explicativos directamente en el código, así como documentación adicional mediante un cuaderno Jupyter.
 
 ---
 
-## 1.1 Creación del repositorio en `GitHub`
+## 1.1 Comentarios en el código fuente
 
-Pasos realizados:  
-	1. Acceder a [GitHub](https://github.com/) con la cuenta correspondiente.  
-	2. Pulsar **New repository**.  
-	3. Configurar:  
-   - **Repository name:** `PPS-Unidad0-Tarea-Joaquin`  
-   - **Visibility:** `Public`  
-   - **Initialize with README:** `Si`  
+Se han añadido comentarios detallados en el archivo `lavadero.py` para explicar:
 
-![](./imagenes/repo.jpg)
+- La finalidad de la clase `Lavadero`
+- El significado de cada constante de fase
+- El comportamiento de los métodos principales (`hacerLavado`, `_cobrar`, `avanzarFase`)
+- Las reglas de negocio impuestas por el enunciado
+- Las decisiones de flujo entre fases
 
----
+Estos comentarios permiten comprender el funcionamiento interno del programa sin necesidad de ejecutar el código.
 
-## 1.2 Instalación `Git` en `Kali Linux`
-
-- Instalamos Git.  
-```bash
-sudo apt install git
-```
-- Configuramos nombre y mail de GitHub, rama por defecto y editor.  
-```bash
-git config --global user.name JBLeopard
-git config --global user.email xxxxxxxxxx@gmail.com
-git config --global init.defaultBranch main
-git config --global core.editor nano
-```
-- Para mostrar mensajes sin editor `git diff` o `git log`.  
-```bash
-git config --global core.pager ""
-```
-- Ajustamos las variables de Git.  
-```bash
-git config --global color.status auto
-git config --global color.branch auto
-git config --global color.interactive auto
-git config --global color.diff auto
-```
-- Creamos una clave ssh en nuestro equipo y la añadimos a nuestra cuenta de github para el sincronismo con github.com.  
-```bash
-ssh-keygen -t ed25519 -C xxxxxxxxxx@gmail.com
-# Iniciamos el agente en segundo plano
-eval "$(ssh-agent -s)"
-#Nos mostrará un mensaje como 
-#Agent pid 59566
-ssh-add ~/.ssh/id_ed25519
-```
-- Luego añadimos la clave generado por el siguiente comando a nuestra cuenta de github.com en apartado **Settings/SSH and GPG keys** y **Nueva clave SSH**.
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-![](./imagenes/ssh.jpg)
-
-- Clonación del repositorio.  
-```bash
-git clone git@github.com:JBLeopard/PPS-Unidad0-Tarea-Joaquin.git
-```
-- Una vez clonado el repositorio a Kali en local, comenzamos la creación de ficheros y estructura del ejercicio que tendrá una estructura final como esta:  
-
-```
-PPS-Unidad0-Tarea-Joaquin/
-├── docker-compose.yaml
-├── docs
-│   ├── conclusiones.md
-│   ├── docker.md
-│   ├── gitActions.md
-│   ├── git.md
-│   ├── gitPages.md
-│   ├── imagenes
-│   │   ├── contenedor.jpg
-│   │   ├── gitpages.jpg
-│   │   ├── logo.png
-│   │   ├── repo.jpg
-│   │   ├── seg.jpg
-│   │   ├── ssh.jpg
-│   │   ├── web.jpg
-│   │   ├── wf.jpg
-│   │   └── wflogs.jpg
-│   ├── index.md
-│   └── inspect_salida.json
-├── .github
-│   └── workflows
-│       └── CreacionDocumentacion.yml
-├── mkdocs.yml
-└── README.md
-```
-- Comandos usados en Git.  
-
-| Acción             | Comando                   |
-| ------------------ | ------------------------- |
-| Clonar repositorio | `git clone URL`           |
-| Añadir cambios     | `git add .`               |
-| Crear commit       | `git commit -m "mensaje"` |
-| Subir cambios      | `git push origin main`    |
+📸 **Código comentado en Visual Studio Code**  
+![Comentarios en lavadero.py](./imagenes/comentarios.png)
 
 ---
-# 2. Ejecuta el programa mediante las opciones de Ejecución y Depuración del IDE.
-🔴 ERROR REAL 1 (IMPORTANTE)
-Falta un argumento al llamar a la función
-📍 Dónde ocurre
 
-Archivo: main_app.py
-Última llamada a ejecutarSimulacion
+## 1.2 Documentación mediante Jupyter Notebook
 
-ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=False)
+Como apoyo adicional, se ha creado un cuaderno Jupyter Notebook donde se explica:
 
-🔴 Qué muestra Visual Studio Code al ejecutar / depurar
+- El enunciado del ejercicio
+- El diseño general de la aplicación
+- Ejemplos de uso del lavadero
+- Fragmentos de código explicados paso a paso
 
-En la consola aparece algo como:
+Este formato facilita una comprensión más visual y didáctica del programa.
 
-TypeError: ejecutarSimulacion() missing 1 required positional argument: 'encerado'
+📓 **Notebook del proyecto:**  
+👉 [notebook_lavadero.ipynb](../notebook_lavadero.ipynb)
 
-
-VS Code:
-
-Detiene la ejecución
-
-Marca la línea en rojo
-
-Indica el archivo y la línea exacta
-
-🧠 Causa del error
-
-La función está definida así:
-
-def ejecutarSimulacion(lavadero, prelavado, secado_mano, encerado):
-
-
-Pero se está llamando solo con 3 argumentos, cuando necesita 4.
-
-✅ Solución aplicada
-
-Añadir el argumento que falta:
-
-ejecutarSimulacion(
-    lavadero_global,
-    prelavado=True,
-    secado_mano=False,
-    encerado=False
-)
-
-
-👉 Este error SÍ es obligatorio documentarlo en el Apartado 2.
-
-Apartado 2 – Ejecución y depuración en Visual Studio Code
-
-Al ejecutar la aplicación desde Visual Studio Code, el IDE mostró un error de ejecución de tipo TypeError, indicando que a la función ejecutarSimulacion le faltaba un argumento obligatorio (encerado). El error se mostraba en la consola, señalando el archivo main_app.py y la línea exacta donde se producía el fallo, deteniendo la ejecución del programa.
-
-La causa del error era una llamada incorrecta a la función, ya que estaba definida con cuatro parámetros, pero se estaba invocando únicamente con tres. Para solucionarlo, se añadió el parámetro que faltaba en la llamada a la función.
-
-Además, Visual Studio Code mostraba varios avisos generados por la extensión SonarLint relacionados con convenciones de nombres, complejidad del código y buenas prácticas. Estos avisos no impedían la ejecución del programa y no se consideraron errores de ejecución, por lo que no fue necesario corregirlos en este apartado.
-
-Tras corregir el error de ejecución, el programa pudo ejecutarse y depurarse correctamente desde el IDE.
+📸 **Notebook visualizado en el navegador**  
+![Notebook Lavadero](./imagenes/notebook.png)
+---
