@@ -1,5 +1,3 @@
-## Apartado 4 – Ejecución en entorno controlado
-
 # 4. Ejecución de la aplicación en un entorno controlado (Sandbox)
 
 Para mejorar la seguridad de la aplicación, se ha ejecutado en un entorno aislado utilizando **Firejail** junto con su interfaz gráfica **Firetools**.
