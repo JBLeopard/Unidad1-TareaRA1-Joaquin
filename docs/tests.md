@@ -43,16 +43,12 @@ Comprueba que al crear un lavadero:
 - Fase = 0 (Inactivo)
 - No está ocupado
 - Ingresos = 0 €
-- Todas las opciones a `False`
-
----
+- Todas las opciones a `False`  
 
 ### Tests 2 y 3 – Reglas de negocio
 Verifican que:
 - No se puede encerar sin secado a mano (`ValueError`)
-- No se puede iniciar un lavado si el lavadero está ocupado (`RuntimeError`)
-
----
+- No se puede iniciar un lavado si el lavadero está ocupado (`RuntimeError`)  
 
 ### Tests 4 a 8 – Cálculo de ingresos
 Comprueban que los ingresos coinciden exactamente con los valores del enunciado:
@@ -63,9 +59,7 @@ Comprueban que los ingresos coinciden exactamente con los valores del enunciado:
 | Secado a mano | 6,00 € |
 | Secado + encerado | 7,20 € |
 | Prelavado + secado | 7,50 € |
-| Lavado completo | 8,70 € |
-
----
+| Lavado completo | 8,70 € |  
 
 ### Tests 9 a 14 – Flujo de fases
 Comprueban que el lavadero pasa por las fases correctas según las opciones seleccionadas.
@@ -74,6 +68,7 @@ Ejemplo:
 ```python
 [0, 1, 3, 4, 5, 6, 0]
 ```
+---
 
 ## 3.4 Resultados iniciales: detección de errores
 
@@ -214,11 +209,6 @@ Esto indicaba claramente que la aplicación no cumplía aún los requisitos func
 
 ---
 
-## 3.5 Análisis detallado de los fallos (FAIL)
-
-
----
-
 ## 3.5 Análisis de los errores de ejecución (FAIL)
 
 ### 3.5.1 Error en el cálculo del precio del secado a mano
@@ -292,6 +282,7 @@ Desde FASE_SECADO_MANO:
 Si encerado → FASE_ENCERADO
 Si no → finalizar lavado
 ```
+---
 
 ## 3.7 Resultados finales tras las correcciones
 
