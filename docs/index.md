@@ -27,10 +27,11 @@ El objetivo principal es integrar diferentes herramientas de DevSecOps: Git, Git
 
 | Archivo | Descripción |
 |---------|-------------|
-| `documentacion.md` | Creación del repositorio y operaciones básicas con Git. |
-| `tests.md` | Configuración del workflow de GitHub Actions. |
-| `sandbox.md` | Publicación del sitio en GitHub Pages. |
-| `conclusiones.md` | Reflexión final del trabajo realizado. |
+| `documentacion.md` | Comentarios en el código y creación notebook. |
+| `ejecucion.md` | Ejecución del código y errores. |
+| `tests.md` | Creación de pruebas y correción del código de la aplicación. |
+| `sandbox.md` | Ejecución en un entorno controlado de la aplicación. |
+| `conclusiones.md` | Reflexión final sobre seguridad en las aplicaciones. |
 
 ---
 
@@ -38,12 +39,10 @@ El objetivo principal es integrar diferentes herramientas de DevSecOps: Git, Git
 
 | Tecnología | Función |
 |-----------|---------|
-| **Git** | Control de versiones |
-| **GitHub** | Repositorio remoto |
-| **GitHub Actions** | Automatización CI |
-| **MkDocs (tema Material)** | Generación de documentación |
-| **GitHub Pages** | Publicación del sitio web |
-| **Docker + NGINX** | Despliegue en contenedor |
+| **Python** | Lenguaje de programación |
+| **Visual Studio Code** | Entorno de Desarrollo Integrado |
+| **Jupyter Notebook** | Entorno de desarrollo interactivo |
+| **Firejail y Firetools** | Motor de aislamiento e interfaz gráfica de aplicaciones |
 
 ---
   
