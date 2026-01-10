@@ -35,7 +35,6 @@ class Lavadero:
     def __init__(self):
         """
         Constructor del lavadero.
-
         Inicializa el lavadero cumpliendo el requisito:
         - ingresos a 0
         - no ocupado
@@ -110,12 +109,10 @@ class Lavadero:
         Calcula el precio del lavado según las opciones seleccionadas.
      
         Precio base: 5.00 €
-        Incrementos:
+        Incrementos modificados para pasar los tests unitarios:
         - Prelavado a mano: +1.50 €
-        - Secado a mano: +1.20 €
-        - Encerado: +1.00 €
-
-        Añade el importe al total de ingresos del lavadero.
+        - Secado a mano: +1.00 €   <-- CAMBIO: antes 1.20, ahora coincide con test5
+        - Encerado: +1.20 €        <-- CAMBIO: antes 1.00, ahora coincide con test6
         """
         coste_lavado = 5.00
         
@@ -123,76 +120,51 @@ class Lavadero:
             coste_lavado += 1.50 
         
         if self.__secado_a_mano:
-            coste_lavado += 1.20 
-            
+            coste_lavado += 1.00  # Cambio para pasar test5
+        
         if self.__encerado:
-            coste_lavado += 1.00 
-            
+            coste_lavado += 1.20  # Cambio para pasar test6
+        
         self.__ingresos += coste_lavado
         return coste_lavado
 
     def avanzarFase(self):
         """
         Avanza el lavadero a la siguiente fase del proceso.
-
-        El cambio de fase depende de:
-        - la fase actual
-        - las opciones seleccionadas por el usuario
-
-        Cuando el proceso termina, el lavadero vuelve a la fase inactiva.
         """
-     # Si el lavadero no está ocupado, no se realiza ninguna acción
         if not self.__ocupado:
             return
-    # FASE 0 → FASE 1
-    # Si el lavadero está inactivo, se realiza el cobro y pasa a fase de cobro
+
         if self.__fase == self.FASE_INACTIVO:
             coste_cobrado = self._cobrar()
             self.__fase = self.FASE_COBRANDO
             print(f" (COBRADO: {coste_cobrado:.2f} €) ", end="")
-    # FASE 1 → FASE 2 o FASE 3
-    # Decisión de pasar por prelavado manual o ir directamente al aclarado
         elif self.__fase == self.FASE_COBRANDO:
             if self.__prelavado_a_mano:
                 self.__fase = self.FASE_PRELAVADO_MANO
             else:
                 self.__fase = self.FASE_ECHANDO_AGUA 
-    # FASE 2 → FASE 3
-    # Finaliza el prelavado manual y comienza el aclarado con agua
         elif self.__fase == self.FASE_PRELAVADO_MANO:
             self.__fase = self.FASE_ECHANDO_AGUA
-    # FASE 3 → FASE 4
-    # Se pasa de aclarado a enjabonado
         elif self.__fase == self.FASE_ECHANDO_AGUA:
             self.__fase = self.FASE_ENJABONANDO
-    # FASE 4 → FASE 5
-    # Se pasa del enjabonado a los rodillos
         elif self.__fase == self.FASE_ENJABONANDO:
             self.__fase = self.FASE_RODILLOS
-    # FASE 5 → FASE 6 o FASE 7
-    # Decisión entre secado automático o secado a mano
         elif self.__fase == self.FASE_RODILLOS:
             if self.__secado_a_mano:
-                self.__fase = self.FASE_SECADO_AUTOMATICO 
-
+                self.__fase = self.FASE_SECADO_MANO  # CAMBIO: corregido flujo secado
             else:
-                self.__fase = self.FASE_SECADO_MANO
-    # FASE 6 → FASE 0
-    # El secado automático finaliza el lavado
+                self.__fase = self.FASE_SECADO_AUTOMATICO
         elif self.__fase == self.FASE_SECADO_AUTOMATICO:
             self.terminar()
-    # FASE 7 → FASE 8 o FASE 0
-    # Tras el secado a mano, se decide si se aplica encerado
         elif self.__fase == self.FASE_SECADO_MANO:
-
-            self.terminar() 
-    # FASE 8 → FASE 0
-    # Finaliza el encerado y se termina el lavado
+            if self.__encerado:
+                self.__fase = self.FASE_ENCERADO  # CAMBIO: flujo correcto para test12/test14
+            else:
+                self.terminar()
         elif self.__fase == self.FASE_ENCERADO:
-            self.terminar() 
-        
+            self.terminar()
         else:
-    # Estado no contemplado: error de programación
             raise RuntimeError(f"Estado no válido: Fase {self.__fase}. El lavadero va a estallar...")
 
 
@@ -222,21 +194,20 @@ class Lavadero:
         self.imprimir_fase()
         print("\n----------------------------------------")
         
-    # Esta función es útil para pruebas unitarias, no es parte del lavadero real
-    # nos crea un array con las fases visitadas en un ciclo completo
 
-def ejecutar_y_obtener_fases(self, prelavado, secado, encerado):
-        
-        self._hacer_lavado(prelavado, secado, encerado)
-        fases_visitadas = [self.fase]
+    # FUNCIONES AUXILIARES PARA TESTS
+    def ejecutar_y_obtener_fases(self, prelavado, secado, encerado):
         """
         Método auxiliar utilizado exclusivamente para pruebas unitarias.
 
         Ejecuta un ciclo completo de lavado y devuelve una lista con
         todas las fases por las que ha pasado el lavadero.
         """
+        self.hacerLavado(prelavado, secado, encerado)  # CAMBIO: corregido _hacer_lavado → hacerLavado
+        fases_visitadas = [self.fase]
+
         while self.ocupado:
-            # Usamos un límite de pasos para evitar bucles infinitos en caso de error
+            # Usamos un límite de pasos para evitar bucles infinitos
             if len(fases_visitadas) > 15:
                 raise Exception("Bucle infinito detectado en la simulación de fases.")
             self.avanzarFase()
