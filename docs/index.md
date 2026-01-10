@@ -7,7 +7,7 @@
    **[Ejecución del programa](ejecucion.md)**
 
 3. Pruebas:  
-   **[Realización de los test unitarios de la aplicación](tests.md)**  
+   **[Pruebas unitarias y corrección del código de la aplicación](tests.md)**  
 
 4. Ejecución en Sandbox:  
    **[Ejecución de la aplicación en un entorno controlado](sandbox.md)**  
