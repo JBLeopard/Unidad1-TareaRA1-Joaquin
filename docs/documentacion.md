@@ -24,7 +24,7 @@ Estos comentarios permiten comprender el funcionamiento interno del programa sin
 
 **Archivo lavadero.py:**  
 
-[lavadero.py](../src/lavadero.py)
+[lavadero.py](https://github.com/jbleopard/PPS-Unidad0-Tarea-Joaquin/blob/main/docs/inspect_salida.json)
 
 ---
 
