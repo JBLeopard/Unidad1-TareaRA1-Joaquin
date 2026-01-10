@@ -79,7 +79,7 @@ Ejemplo:
 
 En la primera ejecución de las pruebas sobre el código original de lavadero.py, se detectaron múltiples errores y fallos.
 
-📸 Capturas de la ejecución con errores
+**Capturas de la ejecución con errores**
 
 ![Errores test](./imagenes/testsko.png)
 ![Errores test](./imagenes/testsko2.png)
