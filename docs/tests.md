@@ -30,11 +30,15 @@ Las pruebas se han realizado en el siguiente entorno:
 Las pruebas se ejecutaron desde terminal utilizando el descubrimiento automático de tests:
 
 ```bash
-PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v  
+PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
 ```
-## 3.2 Tipos de pruebas realizadas
+El parámetro -v (verbose) permite visualizar el resultado detallado de cada prueba, facilitando el análisis de errores.
 
-### ✅ Test 1 – Estado inicial
+---
+
+## 3.3 Tipos de pruebas realizadas
+
+### Test 1 – Estado inicial
 Comprueba que al crear un lavadero:
 - Fase = 0 (Inactivo)
 - No está ocupado
@@ -43,14 +47,14 @@ Comprueba que al crear un lavadero:
 
 ---
 
-### ✅ Tests 2 y 3 – Reglas de negocio
+### Tests 2 y 3 – Reglas de negocio
 Verifican que:
 - No se puede encerar sin secado a mano (`ValueError`)
 - No se puede iniciar un lavado si el lavadero está ocupado (`RuntimeError`)
 
 ---
 
-### ✅ Tests 4 a 8 – Cálculo de ingresos
+### Tests 4 a 8 – Cálculo de ingresos
 Comprueban que los ingresos coinciden exactamente con los valores del enunciado:
 
 | Opción | Ingresos |
@@ -63,7 +67,7 @@ Comprueban que los ingresos coinciden exactamente con los valores del enunciado:
 
 ---
 
-### ✅ Tests 9 a 14 – Flujo de fases
+### Tests 9 a 14 – Flujo de fases
 Comprueban que el lavadero pasa por las fases correctas según las opciones seleccionadas.
 
 Ejemplo:
@@ -71,16 +75,16 @@ Ejemplo:
 [0, 1, 3, 4, 5, 6, 0]
 ```
 
-3.3 Resultados iniciales: detección de errores
+## 3.4 Resultados iniciales: detección de errores
 
 En la primera ejecución de las pruebas sobre el código original de lavadero.py, se detectaron múltiples errores y fallos.
 
 📸 Capturas de la ejecución con errores
 
+![Errores test](./imagenes/testko.png)
+![Errores test](./imagenes/testko2.png)
 
-
-
-📄 Salida completa de la ejecución con errores:
+Salida completa de la ejecución con errores:
 salidatesterror.txt
 
 Resumen de resultados iniciales
