@@ -81,8 +81,8 @@ En la primera ejecución de las pruebas sobre el código original de lavadero.py
 
 📸 Capturas de la ejecución con errores
 
-![Errores test](./imagenes/testko.png)
-![Errores test](./imagenes/testko2.png)
+![Errores test](./imagenes/testsko.png)
+![Errores test](./imagenes/testsko2.png)
 
 Salida completa de la ejecución con errores:
 salidatesterror.txt
