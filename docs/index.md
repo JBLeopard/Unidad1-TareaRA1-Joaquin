@@ -19,8 +19,6 @@
 
 Esta documentación recoge todas las operaciones realizadas durante el desarrollo de la tarea de la Unidad 1 del módulo **Puesta en Producción Segura (PPS)**.
 
-El objetivo principal es integrar diferentes herramientas de DevSecOps: Git, GitHub Actions, MkDocs, GitHub Pages y Docker con NGINX.
-
 ---
 
 ## Contenido de la documentación
