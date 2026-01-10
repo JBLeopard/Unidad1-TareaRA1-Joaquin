@@ -30,7 +30,7 @@ Las pruebas se han realizado en el siguiente entorno:
 Las pruebas se ejecutaron desde terminal utilizando el descubrimiento automático de tests:
 
 ```bash
-PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
+PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v```
 ## 3.2 Tipos de pruebas realizadas
 
 ### ✅ Test 1 – Estado inicial
