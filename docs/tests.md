@@ -27,7 +27,7 @@ Archivo de la aplicación corregido:
 
 ## 3.2 Ejecución de las pruebas unitarias
 
-Las pruebas se ejecutaron desde terminal utilizando el descubrimiento automático de tests:
+Las pruebas se ejecutan desde terminal utilizando el descubrimiento automático de tests:
 
 ```bash
 PYTHONPATH=. python3 -m unittest discover -s tests -p "*.py" -v
