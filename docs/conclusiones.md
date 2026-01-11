@@ -14,7 +14,8 @@ Python es un lenguaje que prioriza la facilidad de uso y la legibilidad, pero no
 
 Otros lenguajes, como Java o C#, incorporan máquinas virtuales con mecanismos de seguridad más avanzados, como control de memoria, gestión de permisos o sandboxing interno. Sin embargo, incluso en estos casos, el uso de entornos controlados sigue siendo una buena práctica.
 
-Esta tarea pone de manifiesto la importancia de combinar:
+Esta tarea pone de manifiesto la importancia de combinar:  
+
 - Buenas prácticas de programación
 - Pruebas automatizadas
 - Ejecución en entornos aislados
