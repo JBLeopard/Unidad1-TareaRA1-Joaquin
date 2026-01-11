@@ -1,0 +1,1190 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de la actividad de la Unidad 1">
+      
+      
+        <meta name="author" content="JBLeopard">
+      
+      
+      
+        <link rel="prev" href="../documentacion/">
+      
+      
+        <link rel="next" href="../sandbox/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Realización de los test unitarios de la aplicación - Unidad1-TareaRA1-Joaquin</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-pruebas-unitarias-y-correccion-del-codigo-de-la-aplicacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Unidad1-TareaRA1-Joaquin" class="md-header__button md-logo" aria-label="Unidad1-TareaRA1-Joaquin" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unidad1-TareaRA1-Joaquin
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Realización de los test unitarios de la aplicación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Unidad1-TareaRA1-Joaquin" class="md-nav__button md-logo" aria-label="Unidad1-TareaRA1-Joaquin" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Unidad1-TareaRA1-Joaquin
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación y prueba del programa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Realización de los test unitarios de la aplicación
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Realización de los test unitarios de la aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-entorno-de-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Entorno de pruebas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-ejecucion-de-las-pruebas-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Ejecución de las pruebas unitarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-tipos-de-pruebas-realizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Tipos de pruebas realizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Tipos de pruebas realizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-estado-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 1 – Estado inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-2-y-3-reglas-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 2 y 3 – Reglas de negocio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-4-a-8-calculo-de-ingresos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 4 a 8 – Cálculo de ingresos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-9-a-14-flujo-de-fases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 9 a 14 – Flujo de fases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-resultados-iniciales-deteccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Resultados iniciales: detección de errores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-analisis-de-los-errores-de-ejecucion-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Análisis de los errores de ejecución (FAIL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Análisis de los errores de ejecución (FAIL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-error-en-el-calculo-del-precio-del-secado-a-mano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.1 Error en el cálculo del precio del secado a mano
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-error-en-el-calculo-de-prelavado-secado-a-mano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.2 Error en el cálculo de prelavado + secado a mano
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-analisis-de-los-errores-de-ejecucion-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Análisis de los errores de ejecución (ERROR)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Análisis de los errores de ejecución (ERROR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-metodo-inexistente-ejecutar_y_obtener_fases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1 Método inexistente ejecutar_y_obtener_fases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-error-logico-en-el-flujo-de-fases-avanzarfase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.2 Error lógico en el flujo de fases (avanzarFase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-resultados-finales-tras-las-correcciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Resultados finales tras las correcciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejecución de la aplicación en un entorno controlado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexión sobre comparación de la infraestructura de seguridad de los lenguajes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-entorno-de-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Entorno de pruebas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-ejecucion-de-las-pruebas-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Ejecución de las pruebas unitarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-tipos-de-pruebas-realizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Tipos de pruebas realizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Tipos de pruebas realizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-estado-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 1 – Estado inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-2-y-3-reglas-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 2 y 3 – Reglas de negocio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-4-a-8-calculo-de-ingresos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 4 a 8 – Cálculo de ingresos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-9-a-14-flujo-de-fases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests 9 a 14 – Flujo de fases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-resultados-iniciales-deteccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Resultados iniciales: detección de errores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-analisis-de-los-errores-de-ejecucion-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Análisis de los errores de ejecución (FAIL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Análisis de los errores de ejecución (FAIL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-error-en-el-calculo-del-precio-del-secado-a-mano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.1 Error en el cálculo del precio del secado a mano
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-error-en-el-calculo-de-prelavado-secado-a-mano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.2 Error en el cálculo de prelavado + secado a mano
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-analisis-de-los-errores-de-ejecucion-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Análisis de los errores de ejecución (ERROR)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Análisis de los errores de ejecución (ERROR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-metodo-inexistente-ejecutar_y_obtener_fases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1 Método inexistente ejecutar_y_obtener_fases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-error-logico-en-el-flujo-de-fases-avanzarfase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.2 Error lógico en el flujo de fases (avanzarFase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-resultados-finales-tras-las-correcciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Resultados finales tras las correcciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-pruebas-unitarias-y-correccion-del-codigo-de-la-aplicacion">3. Pruebas unitarias y corrección del código de la aplicación<a class="headerlink" href="#3-pruebas-unitarias-y-correccion-del-codigo-de-la-aplicacion" title="Permanent link">&para;</a></h1>
+<p>En este apartado se documenta de forma detallada el proceso completo de <strong>ejecución de pruebas unitarias</strong>, <strong>detección de errores</strong>, <strong>análisis de fallos</strong> y <strong>corrección del código</strong> de la aplicación del lavadero.  </p>
+<p>Se hacen uso de pruebas automáticas como mecanismo de control de calidad y detección temprana de errores antes del despliegue de una aplicación.</p>
+<hr />
+<h2 id="31-entorno-de-pruebas">3.1 Entorno de pruebas<a class="headerlink" href="#31-entorno-de-pruebas" title="Permanent link">&para;</a></h2>
+<p>Las pruebas se han realizado en el siguiente entorno:</p>
+<ul>
+<li>Sistema operativo: <strong>Kali Linux</strong></li>
+<li>Lenguaje: <strong>Python 3</strong></li>
+<li>Framework de testing: <strong>unittest</strong></li>
+<li>Entorno virtual: <code>.venv</code></li>
+<li>Editor / IDE: <strong>Visual Studio Code</strong></li>
+<li>Terminal: Bash</li>
+</ul>
+<p>Archivo de pruebas unitarias:<br />
+<a href="https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/tests/test_lavadero_unittest.py"><code>test_lavadero_unittest.py</code></a></p>
+<p>Archivo de la aplicación corregido:<br />
+<a href="https://github.com/JBLeopard/Unidad1-TareaRA1-Joaquin/blob/main/src/lavadero.py"><code>lavadero.py</code></a></p>
+<hr />
+<h2 id="32-ejecucion-de-las-pruebas-unitarias">3.2 Ejecución de las pruebas unitarias<a class="headerlink" href="#32-ejecucion-de-las-pruebas-unitarias" title="Permanent link">&para;</a></h2>
+<p>Las pruebas se ejecutan desde terminal utilizando el descubrimiento automático de tests:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">PYTHONPATH</span><span class="o">=</span>.<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span>-v
+</code></pre></div>
+
+<p>El parámetro -v (verbose) permite visualizar el resultado detallado de cada prueba, facilitando el análisis de errores.</p>
+<hr />
+<h2 id="33-tipos-de-pruebas-realizadas">3.3 Tipos de pruebas realizadas<a class="headerlink" href="#33-tipos-de-pruebas-realizadas" title="Permanent link">&para;</a></h2>
+<h3 id="test-1-estado-inicial">Test 1 – Estado inicial<a class="headerlink" href="#test-1-estado-inicial" title="Permanent link">&para;</a></h3>
+<p>Comprueba que al crear un lavadero:
+- Fase = 0 (Inactivo)
+- No está ocupado
+- Ingresos = 0 €
+- Todas las opciones a <code>False</code>  </p>
+<h3 id="tests-2-y-3-reglas-de-negocio">Tests 2 y 3 – Reglas de negocio<a class="headerlink" href="#tests-2-y-3-reglas-de-negocio" title="Permanent link">&para;</a></h3>
+<p>Verifican que:
+- No se puede encerar sin secado a mano (<code>ValueError</code>)
+- No se puede iniciar un lavado si el lavadero está ocupado (<code>RuntimeError</code>)  </p>
+<h3 id="tests-4-a-8-calculo-de-ingresos">Tests 4 a 8 – Cálculo de ingresos<a class="headerlink" href="#tests-4-a-8-calculo-de-ingresos" title="Permanent link">&para;</a></h3>
+<p>Comprueban que los ingresos coinciden exactamente con los valores del enunciado:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Ingresos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prelavado</td>
+<td>6,50 €</td>
+</tr>
+<tr>
+<td>Secado a mano</td>
+<td>6,00 €</td>
+</tr>
+<tr>
+<td>Secado + encerado</td>
+<td>7,20 €</td>
+</tr>
+<tr>
+<td>Prelavado + secado</td>
+<td>7,50 €</td>
+</tr>
+<tr>
+<td>Lavado completo</td>
+<td>8,70 €</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tests-9-a-14-flujo-de-fases">Tests 9 a 14 – Flujo de fases<a class="headerlink" href="#tests-9-a-14-flujo-de-fases" title="Permanent link">&para;</a></h3>
+<p>Comprueban que el lavadero pasa por las fases correctas según las opciones seleccionadas.</p>
+<p>Ejemplo:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<hr />
+<h2 id="34-resultados-iniciales-deteccion-de-errores">3.4 Resultados iniciales: detección de errores<a class="headerlink" href="#34-resultados-iniciales-deteccion-de-errores" title="Permanent link">&para;</a></h2>
+<p>En la primera ejecución de las pruebas sobre el código original de lavadero.py, se detectaron múltiples errores y fallos.</p>
+<p><strong>Capturas de la ejecución con errores</strong></p>
+<p><img alt="Errores test" src="../imagenes/testsko.png" />
+<img alt="Errores test" src="../imagenes/testsko2.png" /></p>
+<p>Salida completa de la ejecución con errores:  </p>
+<div class="codehilite"><pre><span></span><code>┌──<span class="o">(</span>.venv<span class="o">)(</span>PPSJoaquin㉿kali<span class="o">)</span>-<span class="o">[</span>~/Descargas/programa/src<span class="o">]</span>
+└─$<span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>.<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span>-v
+test10_flujo_prelavado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test10_flujo_prelavado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">10</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado.<span class="w"> </span>...<span class="w"> </span>ERROR
+test11_flujo_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">11</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.<span class="w"> </span>...<span class="w"> </span>ERROR
+test12_flujo_secado_y_encerado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">12</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>y<span class="w"> </span>encerado.<span class="w"> </span>...<span class="w"> </span>ERROR
+test13_flujo_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">13</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado<span class="w"> </span>y<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.<span class="w"> </span>...<span class="w"> </span>ERROR
+test14_flujo_completo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test14_flujo_completo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">14</span>:<span class="w"> </span>Flujo<span class="w"> </span>completo.<span class="w"> </span>...<span class="w"> </span>ERROR
+test1_estado_inicial_inactivo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test1_estado_inicial_inactivo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Estado<span class="w"> </span>inicial<span class="w"> </span>del<span class="w"> </span>lavadero.<span class="w"> </span>...<span class="w"> </span>ok
+test2_excepcion_encerado_sin_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test2_excepcion_encerado_sin_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">2</span>:<span class="w"> </span>Encerado<span class="w"> </span>sin<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>lanza<span class="w"> </span>ValueError.<span class="w"> </span>...<span class="w"> </span>ok
+test3_excepcion_lavadero_ocupado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test3_excepcion_lavadero_ocupado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">3</span>:<span class="w"> </span>No<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>iniciar<span class="w"> </span>un<span class="w"> </span>lavado<span class="w"> </span>si<span class="w"> </span>ya<span class="w"> </span>está<span class="w"> </span>ocupado.<span class="w"> </span>...<span class="w"> </span>ok
+test4_ingresos_prelavado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test4_ingresos_prelavado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">4</span>:<span class="w"> </span>Prelavado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>.50<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test5_ingresos_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">5</span>:<span class="w"> </span>Secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>.00<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>FAIL
+test6_ingresos_secado_y_encerado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test6_ingresos_secado_y_encerado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">6</span>:<span class="w"> </span>Secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>+<span class="w"> </span><span class="nv">encerado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.20<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test7_ingresos_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">7</span>:<span class="w"> </span>Prelavado<span class="w"> </span>+<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.50<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>FAIL
+test8_ingresos_completo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test8_ingresos_completo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">8</span>:<span class="w"> </span>Prelavado<span class="w"> </span>+<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>+<span class="w"> </span><span class="nv">encerado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>.70<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test9_flujo_sin_extras<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras<span class="o">)</span>
+Test<span class="w"> </span><span class="m">9</span>:<span class="w"> </span>Flujo<span class="w"> </span>sin<span class="w"> </span>extras.<span class="w"> </span>...<span class="w"> </span><span class="nv">ERROR</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test10_flujo_prelavado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test10_flujo_prelavado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">10</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">85</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test10_flujo_prelavado
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>True,<span class="w"> </span>False,<span class="w"> </span>False<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test11_flujo_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">11</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">91</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test11_flujo_secado_mano
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>False,<span class="w"> </span>True,<span class="w"> </span>False<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test12_flujo_secado_y_encerado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">12</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>y<span class="w"> </span>encerado.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">97</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test12_flujo_secado_y_encerado
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>False,<span class="w"> </span>True,<span class="w"> </span>True<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test13_flujo_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">13</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado<span class="w"> </span>y<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">103</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test13_flujo_prelavado_y_secado
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>True,<span class="w"> </span>True,<span class="w"> </span>False<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test14_flujo_completo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test14_flujo_completo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">14</span>:<span class="w"> </span>Flujo<span class="w"> </span>completo.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">109</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test14_flujo_completo
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>True,<span class="w"> </span>True,<span class="w"> </span>True<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+ERROR:<span class="w"> </span>test9_flujo_sin_extras<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras<span class="o">)</span>
+Test<span class="w"> </span><span class="m">9</span>:<span class="w"> </span>Flujo<span class="w"> </span>sin<span class="w"> </span>extras.
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">79</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test9_flujo_sin_extras
+<span class="w">    </span><span class="nv">fases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.lavadero.ejecutar_y_obtener_fases<span class="o">(</span>False,<span class="w"> </span>False,<span class="w"> </span>False<span class="o">)</span>
+<span class="w">            </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError:<span class="w"> </span><span class="s1">&#39;Lavadero&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;ejecutar_y_obtener_fases&#39;</span>
+
+<span class="o">======================================================================</span>
+FAIL:<span class="w"> </span>test5_ingresos_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">5</span>:<span class="w"> </span>Secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>.00<span class="w"> </span>€
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">53</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test5_ingresos_secado_mano
+<span class="w">    </span>self.assertEqual<span class="o">(</span>self.lavadero.ingresos,<span class="w"> </span><span class="m">6</span>.00<span class="o">)</span>
+<span class="w">    </span>~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError:<span class="w"> </span><span class="m">6</span>.2<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">6</span>.0
+
+<span class="o">======================================================================</span>
+FAIL:<span class="w"> </span>test7_ingresos_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">7</span>:<span class="w"> </span>Prelavado<span class="w"> </span>+<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.50<span class="w"> </span>€
+----------------------------------------------------------------------
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/PPSJoaquin/Descargas/programa/src/tests/test_lavadero_unittest.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">65</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>test7_ingresos_prelavado_y_secado
+<span class="w">    </span>self.assertEqual<span class="o">(</span>self.lavadero.ingresos,<span class="w"> </span><span class="m">7</span>.50<span class="o">)</span>
+<span class="w">    </span>~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError:<span class="w"> </span><span class="m">7</span>.7<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">7</span>.5
+
+----------------------------------------------------------------------
+Ran<span class="w"> </span><span class="m">14</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.008s
+
+FAILED<span class="w"> </span><span class="o">(</span><span class="nv">failures</span><span class="o">=</span><span class="m">2</span>,<span class="w"> </span><span class="nv">errors</span><span class="o">=</span><span class="m">6</span><span class="o">)</span>
+<span class="w"> </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.50<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.20<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.20<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.70<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">8</span>.70<span class="w"> </span>€<span class="o">)</span>
+</code></pre></div>
+
+<p>Resumen de resultados iniciales  </p>
+<ul>
+<li>14 tests ejecutados  </li>
+<li>2 fallos (FAIL)  </li>
+<li>6 errores (ERROR)  </li>
+<li>6 tests correctos (OK)</li>
+</ul>
+<p>Esto indicaba claramente que la aplicación no cumplía aún los requisitos funcionales definidos por los tests.</p>
+<hr />
+<h2 id="35-analisis-de-los-errores-de-ejecucion-fail">3.5 Análisis de los errores de ejecución (FAIL)<a class="headerlink" href="#35-analisis-de-los-errores-de-ejecucion-fail" title="Permanent link">&para;</a></h2>
+<h3 id="351-error-en-el-calculo-del-precio-del-secado-a-mano">3.5.1 Error en el cálculo del precio del secado a mano<a class="headerlink" href="#351-error-en-el-calculo-del-precio-del-secado-a-mano" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Test afectado:</strong> <code>test5_ingresos_secado_mano</code>  </li>
+<li><strong>Mensaje de error:</strong> <code>AssertionError: 6.2 != 6.0</code>  </li>
+<li><strong>Descripción:</strong><br />
+  El test esperaba que un lavado con solo secado a mano tuviera un coste total de 6,00 €, pero el código original devolvía 6,20 €.  </li>
+<li><strong>Causa del error:</strong><br />
+  En el método <code>_cobrar()</code> del archivo <code>lavadero.py</code>, el incremento aplicado al secado a mano era incorrecto.  </li>
+<li><strong>Corrección aplicada:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__secado_a_mano</span><span class="p">:</span>
+    <span class="n">coste_lavado</span> <span class="o">+=</span> <span class="mf">1.00</span>
+</code></pre></div>
+
+<hr />
+<h3 id="352-error-en-el-calculo-de-prelavado-secado-a-mano">3.5.2 Error en el cálculo de prelavado + secado a mano<a class="headerlink" href="#352-error-en-el-calculo-de-prelavado-secado-a-mano" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Test afectado:</strong> <code>test7_ingresos_prelavado_y_secado</code>  </li>
+<li><strong>Mensaje de error:</strong> <code>AssertionError: 7.7 != 7.5</code>  </li>
+<li><strong>Descripción:</strong><br />
+  El precio calculado no coincidía con el valor esperado por el test.  </li>
+<li><strong>Causa del error:</strong><br />
+  Los incrementos de precio definidos en <code>_cobrar()</code> no estaban alineados con los valores exigidos por los tests unitarios.  </li>
+<li><strong>Solución aplicada:</strong><br />
+  Se ajustaron los precios definitivos a:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Incremento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prelavado a mano</td>
+<td>+1,50 €</td>
+</tr>
+<tr>
+<td>Secado a mano</td>
+<td>+1,00 €</td>
+</tr>
+<tr>
+<td>Encerado</td>
+<td>+1,20 €</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="36-analisis-de-los-errores-de-ejecucion-error">3.6 Análisis de los errores de ejecución (ERROR)<a class="headerlink" href="#36-analisis-de-los-errores-de-ejecucion-error" title="Permanent link">&para;</a></h2>
+<h3 id="361-metodo-inexistente-ejecutar_y_obtener_fases">3.6.1 Método inexistente <code>ejecutar_y_obtener_fases</code><a class="headerlink" href="#361-metodo-inexistente-ejecutar_y_obtener_fases" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tests afectados:</strong> test9 a test14  </li>
+<li><strong>Mensaje de error:</strong> <code>AttributeError: 'Lavadero' object has no attribute 'ejecutar_y_obtener_fases'</code>  </li>
+<li><strong>Causa:</strong><br />
+  El método <code>ejecutar_y_obtener_fases</code>:</li>
+<li>No estaba definido dentro de la clase <code>Lavadero</code>.  </li>
+<li>Llamaba a un método inexistente <code>_hacer_lavado</code>.  </li>
+<li><strong>Solución aplicada:</strong>  </li>
+<li>Se movió el método dentro de la clase <code>Lavadero</code>.  </li>
+<li>Se corrigió la llamada a <code>hacerLavado()</code>.</li>
+</ul>
+<hr />
+<h3 id="362-error-logico-en-el-flujo-de-fases-avanzarfase">3.6.2 Error lógico en el flujo de fases (<code>avanzarFase</code>)<a class="headerlink" href="#362-error-logico-en-el-flujo-de-fases-avanzarfase" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Problemas detectados:</strong>  </li>
+<li>El flujo desde la fase de rodillos era incorrecto.  </li>
+<li>El secado a mano no se ejecutaba correctamente.  </li>
+<li>El encerado no se alcanzaba aunque estuviera seleccionado.  </li>
+<li>
+<p>El lavado terminaba antes de tiempo.  </p>
+</li>
+<li>
+<p><strong>Correcciones aplicadas:</strong>  </p>
+</li>
+</ul>
+<p>Desde <code>FASE_RODILLOS</code>:</p>
+<div class="codehilite"><pre><span></span><code>Si secado_a_mano → FASE_SECADO_MANO
+Si no → FASE_SECADO_AUTOMATICO
+</code></pre></div>
+
+<p>Desde <code>FASE_SECADO_MANO</code>:</p>
+<div class="codehilite"><pre><span></span><code>Si encerado → FASE_ENCERADO
+Si no → finalizar lavado
+</code></pre></div>
+
+<hr />
+<h2 id="37-resultados-finales-tras-las-correcciones">3.7 Resultados finales tras las correcciones<a class="headerlink" href="#37-resultados-finales-tras-las-correcciones" title="Permanent link">&para;</a></h2>
+<p>Tras aplicar todas las correcciones,  los tests se ejecutan de manera exitosa.</p>
+<p><strong>Captura de tests superados correctamente</strong></p>
+<p><img alt="Test correcto" src="../imagenes/testsok.png" /></p>
+<p>Salida completa de la ejecución corregida:</p>
+<div class="codehilite"><pre><span></span><code>┌──<span class="o">(</span>.venv<span class="o">)(</span>PPSJoaquin㉿kali<span class="o">)</span>-<span class="o">[</span>~/Descargas/programa/src<span class="o">]</span>
+└─$<span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>.<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span>-v
+test10_flujo_prelavado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test10_flujo_prelavado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">10</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado.<span class="w"> </span>...<span class="w"> </span>ok
+test11_flujo_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test11_flujo_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">11</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.<span class="w"> </span>...<span class="w"> </span>ok
+test12_flujo_secado_y_encerado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test12_flujo_secado_y_encerado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">12</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>y<span class="w"> </span>encerado.<span class="w"> </span>...<span class="w"> </span>ok
+test13_flujo_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test13_flujo_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">13</span>:<span class="w"> </span>Flujo<span class="w"> </span>con<span class="w"> </span>prelavado<span class="w"> </span>y<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano.<span class="w"> </span>...<span class="w"> </span>ok
+test14_flujo_completo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test14_flujo_completo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">14</span>:<span class="w"> </span>Flujo<span class="w"> </span>completo.<span class="w"> </span>...<span class="w"> </span>ok
+test1_estado_inicial_inactivo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test1_estado_inicial_inactivo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Estado<span class="w"> </span>inicial<span class="w"> </span>del<span class="w"> </span>lavadero.<span class="w"> </span>...<span class="w"> </span>ok
+test2_excepcion_encerado_sin_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test2_excepcion_encerado_sin_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">2</span>:<span class="w"> </span>Encerado<span class="w"> </span>sin<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>lanza<span class="w"> </span>ValueError.<span class="w"> </span>...<span class="w"> </span>ok
+test3_excepcion_lavadero_ocupado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test3_excepcion_lavadero_ocupado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">3</span>:<span class="w"> </span>No<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>iniciar<span class="w"> </span>un<span class="w"> </span>lavado<span class="w"> </span>si<span class="w"> </span>ya<span class="w"> </span>está<span class="w"> </span>ocupado.<span class="w"> </span>...<span class="w"> </span>ok
+test4_ingresos_prelavado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test4_ingresos_prelavado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">4</span>:<span class="w"> </span>Prelavado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>.50<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test5_ingresos_secado_mano<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test5_ingresos_secado_mano<span class="o">)</span>
+Test<span class="w"> </span><span class="m">5</span>:<span class="w"> </span>Secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>.00<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test6_ingresos_secado_y_encerado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test6_ingresos_secado_y_encerado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">6</span>:<span class="w"> </span>Secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>+<span class="w"> </span><span class="nv">encerado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.20<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test7_ingresos_prelavado_y_secado<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test7_ingresos_prelavado_y_secado<span class="o">)</span>
+Test<span class="w"> </span><span class="m">7</span>:<span class="w"> </span>Prelavado<span class="w"> </span>+<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span><span class="nv">mano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.50<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test8_ingresos_completo<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test8_ingresos_completo<span class="o">)</span>
+Test<span class="w"> </span><span class="m">8</span>:<span class="w"> </span>Prelavado<span class="w"> </span>+<span class="w"> </span>secado<span class="w"> </span>a<span class="w"> </span>mano<span class="w"> </span>+<span class="w"> </span><span class="nv">encerado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>.70<span class="w"> </span>€<span class="w"> </span>...<span class="w"> </span>ok
+test9_flujo_sin_extras<span class="w"> </span><span class="o">(</span>test_lavadero_unittest.TestLavadero.test9_flujo_sin_extras<span class="o">)</span>
+Test<span class="w"> </span><span class="m">9</span>:<span class="w"> </span>Flujo<span class="w"> </span>sin<span class="w"> </span>extras.<span class="w"> </span>...<span class="w"> </span>ok
+
+----------------------------------------------------------------------
+Ran<span class="w"> </span><span class="m">14</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.002s
+
+OK
+<span class="w"> </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.50<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.00<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.20<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.50<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">8</span>.70<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.50<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">6</span>.00<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.20<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">7</span>.50<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">8</span>.70<span class="w"> </span>€<span class="o">)</span><span class="w">  </span><span class="o">(</span>COBRADO:<span class="w"> </span><span class="m">5</span>.00<span class="w"> </span>€<span class="o">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
